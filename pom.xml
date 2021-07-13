@@ -15,6 +15,19 @@
         <scala.binary.version>2.12</scala.binary.version>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.amazonaws</groupId>
+                <artifactId>aws-java-sdk-bom</artifactId>
+                <!-- Get the latest SDK version from https://mvnrepository.com/artifact/com.amazonaws/aws-java-sdk-bom -->
+                <version>1.11.970</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <dependency>
             <groupId>org.apache.flink</groupId>
@@ -22,7 +35,13 @@
             <version>${flink.version}</version>
             <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.amazonaws</groupId>
+            <artifactId>aws-java-sdk-logs</artifactId>
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>
